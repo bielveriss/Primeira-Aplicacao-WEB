@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="carrinho.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+    <title>Carrinho</title>
+
+</head>
+
+<body>
+    
+    <div class="background">
+        <header>
+
+            <div class="cabecalho1">
+
+                <div class="logo">
+                    <a href="index.html"> <h1> This is Cosmetics</h1> </a>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" class="search-txt" placeholder="Pesquisar..." />
+                    <a href="pesquisa.html" class="search-btn">
+                        <img src="img/LupaAzul.png" alt="Lupa" height="25" width="25">
+                    </a>
+
+                </div>
+
+                <a href="login.html"> <div class="iconperfil1"><span><ion-icon name="person-circle-outline"></ion-icon></span>
+                </div> </a>
+
+                <div class="iconcarrinho">
+                <a href="carrinho.html"> <div class="iconcarrinho1"><span><ion-icon name="bag-handle-outline"></ion-icon></span></div> </a>
+            </div>
+    
+            </div> 
+
+            <div class="cabecalho2">
+                <li>
+                    <a href="#">Ruby Rose</a>
+                </li>
+                <li>
+                    <a href="#">Loreal Paris</a>
+                </li>
+                <li>
+                    <a href="#">Nivea</a>
+                </li>
+                <li>
+                    <a href="#">Oboticário</a>
+                </li>
+                <li>
+                    <a href="#">Neutrogena</a>
+                </li>
+            </div>
+
+        </header>
+
+        <main>
+            <div class="page-title">Meu Carrinho</div>
+            <div class="content">
+              <section>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Produto</th>
+                      <th>Preço</th>
+                      <th>Quantidade</th>
+                      <th>Total</th>
+                      <th>-</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="product">
+                          <img src="img/niveafacial.png" alt="" width="100px"/>
+                          <div class="info">
+                            <div class="name">Nivea Mousee de Limpeza Aqua Rose</div>
+                            <div class="category">Nivea</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>R$ 44,90</td>
+                      <td>
+                        <div class="qty">
+                          <button><i class="bx bx-minus"></i></button>
+                          <span>2</span>
+                          <button><i class="bx bx-plus"></i></button>
+                        </div>
+                      </td>
+                      <td>R$ 89,80</td>
+                      <td>
+                        <button class="remove"><i class="bx bx-x"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="product">
+                          <img src="img/Sombrailuminador1.png" alt="" width="100px"/>
+                          <div class="info">
+                            <div class="name">Sombra e Iluminador 2X1 Rr10861 Melu By Rubyrose</div>
+                            <div class="category">Ruby Rose</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>R$ 20,50</td>
+                      <td>
+                        <div class="qty">
+                          <button><i class="bx bx-minus"></i></button>
+                          <span>2</span>
+                          <button><i class="bx bx-plus"></i></button>
+                        </div>
+                      </td>
+                      <td>R$ 41</td>
+                      <td>
+                        <button class="remove"><i class="bx bx-x"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="product">
+                          <img src="img/Lençodemaquilante1.png" alt="" width="100px"/>
+                          <div class="info">
+                            <div class="name">Lenço Demaquilante Basics Hb203 Rubyrose</div>
+                            <div class="category">Ruby Rose</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>R$ 16,56 </td>
+                      <td>
+                        <div class="qty">
+                          <button><i class="bx bx-minus"></i></button>
+                          <span>2</span>
+                          <button><i class="bx bx-plus"></i></button>
+                        </div>
+                      </td>
+                      <td>R$ 33,12 </td>
+                      <td>
+                        <button class="remove"><i class="bx bx-x"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <aside>
+                <div class="box">
+                  <header>Resumo da compra</header>
+                  <div class="info">
+                    <div><span>Sub-total</span><span>R$ 163,92</span></div>
+                    <div><span>Frete</span><span>Gratuito</span></div>
+                    <div>
+                      <button>
+                        Adicionar cupom de desconto
+                        <i class="bx bx-right-arrow-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <footer>
+                    <span>Total</span>
+                    <span>R$ 163,92</span>
+                  </footer>
+                </div>
+                <button class="finalizar">Finalizar Compra</button>
+              </aside>
+            </div>
+          </main>
+
+    </div>
+</body>
+</html>

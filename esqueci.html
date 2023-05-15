@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recuperar senha</title>
+  <link rel="stylesheet" href="esqueci.css">
+   <!-- Font Awesome Cdn Link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Pra já!</h1>
+    <p>Recupere a sua senha</p>
+    <form id="form">
+  
+      <input type="email" placeholder="Email" class="inputs required" oninput="emailValidate()">
+      <span class="span-required">O email está incorreto</span>
+
+    </form>
+    <button type="submit">Recuperar</button>
+    
+  </div>
+</body>
+</html>
+
+<script>
+  const form = document.getElementById('form');
+  const campos = document.querySelectorAll('.required');
+  const spans = document.querySelectorAll('.span-required');
+
+  const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+  function setError(index) {
+    campos[index].style.border = '2px solid red'
+    spans[index].style.display = 'block';
+  }
+  
+  function removeError(index) {
+    campos[index].style.border = ''
+    spans[index].style.display = 'none';
+  }
+
+  function emailValidate() {
+    if(!emailRegex.test(campos[0].value)) {
+      setError(0);
+    }
+    else {
+      removeError(0);
+    }
+  }
+</script>

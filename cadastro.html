@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="cadastro.css">
+   <!-- Font Awesome Cdn Link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Bem Vindo!</h1>
+    <p>Faça o seu cadastro</p>
+    <form id="form">
+      <input type="text" placeholder="Nome completo" class="inputs required" oninput="nameValidate()">
+      <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+      <input type="email" placeholder="Email" class="inputs required" oninput="emailValidate()">
+      <span class="span-required">O email está incorreto</span>
+      <input type="text" placeholder="CPF" class="inputs required" oninput="cpfValidate()"> 
+      <span class="span-required">Digite somente números</span>
+      <input type="text" placeholder="Telefone" class="inputs required" oninput="telefoneValidate()">
+      <span class="span-required">Digite o DDD</span>
+      <input type="password" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()">
+      <span class="span-required">A senha deve conter 8 caracteres</span>
+      <input type="password" placeholder="Confirmar senha" class="inputs required" oninput="comparePassword()">
+      <span class="span-required">A senha não condiz</span>
+    </form>
+    <button type="submit">Cadastrar</button>
+    <p class="or">
+      ----- Ou continue com -----
+    </p>
+    <div class="icons">
+      <i class="fab fa-google"></i>
+      <i class="fab fa-github"></i>
+      <i class="fab fa-facebook"></i>
+    </div>
+    <div class="not-member">
+      Já tem cadastro? <a href="login.html">Clique Aqui!</a>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  const form = document.getElementById('form');
+  const campos = document.querySelectorAll('.required');
+  const spans = document.querySelectorAll('.span-required');
+
+  const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  const cpfRegex = /[0-9]{11}/;
+  const telefoneRegex = /^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$/;
+
+;
+
+function setError(index) {
+  campos[index].style.border = '2px solid red'
+  spans[index].style.display = 'block';
+}
+
+function removeError(index) {
+  campos[index].style.border = ''
+  spans[index].style.display = 'none';
+}
+
+function nameValidate() {
+  if(campos[0].value.length < 3)
+  {
+    setError(0);
+  }
+  else {
+    removeError(0);
+  }
+}
+
+  function emailValidate() {
+    if(!emailRegex.test(campos[1].value)) {
+      setError(1);
+    }
+    else {
+      removeError(1);
+    }
+  }
+
+  function cpfValidate(){
+    if(!cpfRegex.test(campos[2].value))
+    {
+      setError(2);
+    }
+    else {
+      removeError(2);
+    }
+  }
+
+  function telefoneValidate(){
+    if(!telefoneRegex.test(campos[3].value))
+    {
+      setError(3);
+    }
+    else {
+      removeError(3);
+    }
+  }
+
+  function mainPasswordValidate(){
+    if(campos[4].value.length < 8)
+    {
+      setError(4);
+    }
+    else {
+      removeError(4);
+      comparePassword();
+    }
+  }
+
+  function comparePassword() {
+    if(campos[4].value == campos[5].value && campos[5].value.length >= 8) {
+      removeError(5);
+    }
+    else {
+      setError(5);
+    }
+  }
+
+</script>
